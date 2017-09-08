@@ -9,7 +9,7 @@ build:
   script:
     - java -version
     - ruby -v
-    - cd ./MySampleWebApi.Doc && chmod +x *.sh && ./build.sh
+    - cd ./MySampleWebApi.Doc && chmod +x *.sh && ./build.sh ./swagger.json
   artifacts:
     paths:
       - ./MySampleWebApi.Doc/pdf/out.pdf
