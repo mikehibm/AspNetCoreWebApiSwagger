@@ -78,5 +78,51 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="P:MySampleWebApi.Resources.Product.id">
+            <summary>
+            商品のIdentity
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.Product.ProdCd">
+            <summary>
+            商品コード(カタログ上のコード)
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.Product.ProdName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.Product.Price">
+            <summary>
+            現在の価格
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.Product.CreatedAt">
+            <summary>
+            登録日
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.User.id">
+            <summary>
+            ユーザーのIdentity
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.User.Name">
+            <summary>
+            ユーザー名
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.User.Email">
+            <summary>
+            ユーザーのメールアドレス
+            各種通知メッセージがこのアドレスに送られる。
+            </summary>
+        </member>
+        <member name="P:MySampleWebApi.Resources.User.CreatedAt">
+            <summary>
+            登録日時
+            </summary>
+        </member>
     </members>
 </doc>
