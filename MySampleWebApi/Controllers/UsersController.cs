@@ -16,9 +16,9 @@ namespace MySampleWebApi.Controllers
     public class UsersController : Controller
     {
         private static User[] users = new User[] {
-            new User(){ id = 1, Name="User 1", Email = "user1@hoge.com", CreatedAt=DateTime.Now },
-            new User(){ id = 2, Name="User 2", Email = "user2@hoge.com", CreatedAt=DateTime.Now },
-            new User(){ id = 3, Name="User 3", Email = "user3@hoge.com", CreatedAt=DateTime.Now },
+            new User(){ id = 1, Name="ユーザー 1", Email = "user1@hoge.com", CreatedAt=DateTime.Now },
+            new User(){ id = 2, Name="ユーザー 2", Email = "user2@hoge.com", CreatedAt=DateTime.Now },
+            new User(){ id = 3, Name="ユーザー 3", Email = "user3@hoge.com", CreatedAt=DateTime.Now },
         };
 
 

@@ -1,8 +1,23 @@
 image: "ubuntu:14.04"
+stages: 
+  - deploy 
+  - pdf
 
-build:
+deploy:
+  stage: deploy
   before_script:
     - apt-get update && apt-get install -y software-properties-common curl git
+    - add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.4
+    - gem install dpl
+
+  script:
+    - ruby -v
+    - dpl --provider=AzureWebApps --verbose    
+
+pdf:
+  stage: pdf
+  before_script:
+    - apt-get update && apt-get install -y software-properties-common curl
     - add-apt-repository -y ppa:openjdk-r/ppa && add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y openjdk-8-jdk ruby2.4
     - gem install --pre asciidoctor-pdf
 
