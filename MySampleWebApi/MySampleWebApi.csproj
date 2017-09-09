@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MySampleWebApi.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MySampleWebApi.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
