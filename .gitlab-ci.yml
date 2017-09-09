@@ -5,6 +5,8 @@ stages:
 
 deploy:
   stage: deploy
+  only: 
+    - - /^release-.*$/
   before_script:
     - apt-get update && apt-get install -y software-properties-common curl git
     - add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.4
@@ -16,6 +18,8 @@ deploy:
 
 pdf:
   stage: pdf
+  only: 
+    - - /^release-.*$/
   before_script:
     - apt-get update && apt-get install -y software-properties-common curl
     - add-apt-repository -y ppa:openjdk-r/ppa && add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y openjdk-8-jdk ruby2.4
