@@ -17,10 +17,10 @@ namespace MySampleWebApi.Controllers
     {
 
         private static Product[] products = new Product[] {
-                new Product() { id = 100, ProdCd = "AAA", ProdName = "商品 A", Price = 123.45m, CreatedAt = DateTime.Now },
-                new Product() { id = 101, ProdCd = "BBBB", ProdName = "商品 B", Price = 98.99m, CreatedAt = DateTime.Now },
-                new Product() { id = 102, ProdCd = "CCCC", ProdName = "商品 C", Price = 12.0m, CreatedAt = DateTime.Now },
-                new Product() { id = 103, ProdCd = "DDDDD", ProdName = "商品 D", Price = 3.45m, CreatedAt = DateTime.Now },
+                new Product() { id = 100, ProdCd = "AAA101", ProdName = "商品 A", Price = 123.45m, CreatedAt = DateTime.Now },
+                new Product() { id = 101, ProdCd = "BBBB2056", ProdName = "商品 B", Price = 98.99m, CreatedAt = DateTime.Now },
+                new Product() { id = 102, ProdCd = "CCCC5063", ProdName = "商品 C", Price = 12.0m, CreatedAt = DateTime.Now },
+                new Product() { id = 103, ProdCd = "DDDDD3339", ProdName = "商品 D", Price = 3.45m, CreatedAt = DateTime.Now },
         };
 
 
