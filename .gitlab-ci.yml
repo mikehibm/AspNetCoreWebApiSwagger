@@ -1,4 +1,4 @@
-image: "ubuntu:14.04"
+image: "mikehibm/swagger-pdf-creator"
 stages: 
   - deploy 
   - pdf
@@ -7,10 +7,6 @@ deploy:
   stage: deploy
   only: 
     - /^release-.*$/
-  before_script:
-    - apt-get update && apt-get install -y software-properties-common curl git
-    - add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y ruby2.4
-    - gem install dpl
 
   script:
     - ruby -v
@@ -20,15 +16,19 @@ pdf:
   stage: pdf
   only: 
     - /^release-.*$/
-  before_script:
-    - apt-get update && apt-get install -y software-properties-common curl
-    - add-apt-repository -y ppa:openjdk-r/ppa && add-apt-repository -y ppa:brightbox/ruby-ng && apt-get update && apt-get install -y openjdk-8-jdk ruby2.4
-    - gem install --pre asciidoctor-pdf
 
   script:
     - java -version
     - ruby -v
-    - cd ./MySampleWebApi.Doc && chmod +x *.sh && ./build.sh $SWAGGER_JSON_URL
+
+    # Build PDF file into /home/pdf/ directory.
+    - cd /home && /home/build.sh $SWAGGER_JSON_URL output.pdf
+
+    # Copy the created PDF file to the project directory. (Necessary to be able to be an artifact)
+    - cp /home/pdf/output.pdf $CI_PROJECT_DIR/
+    - ls -al /home/pdf/
+    - ls -al $CI_PROJECT_DIR
   artifacts:
     paths:
-      - ./MySampleWebApi.Doc/pdf/out.pdf
+      - output.pdf
+    expire_in: 1 week
